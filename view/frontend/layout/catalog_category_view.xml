@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+      <css src="Mickael_Offers::css/style.css" />
+    </head>
+    <body>
+      <referenceContainer name="content">
+          <block class="Mickael\Offers\Block\Catalog\Category\View\Offer" name="mickael_offers_category" template="Mickael_Offers::top-category-offer.phtml"></block>
+      </referenceContainer>
+      <move element="mickael_offers_category" destination="content" before="-"/>
+    </body>
+</page>

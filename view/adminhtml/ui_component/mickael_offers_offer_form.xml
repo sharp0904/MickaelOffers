@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">mickael_offers_offer_form.offer_form_data_source</item>
+		</item>
+		<item name="label" xsi:type="string" translate="true">General Information</item>
+		<item name="template" xsi:type="string">templates/form/collapsible</item>
+	</argument>
+	<settings>
+		<buttons>
+			<button name="back" class="Mickael\Offers\Block\Adminhtml\Offer\Edit\BackButton"/>
+			<button name="delete" class="Mickael\Offers\Block\Adminhtml\Offer\Edit\DeleteButton"/>
+			<button name="save" class="Mickael\Offers\Block\Adminhtml\Offer\Edit\SaveButton"/>
+			<button name="save_and_continue" class="Mickael\Offers\Block\Adminhtml\Offer\Edit\SaveAndContinueButton"/>
+		</buttons>
+		<namespace>mickael_offers_offer_form</namespace>
+		<dataScope>data</dataScope>
+		<deps>
+			<dep>mickael_offers_offer_form.offer_form_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="offer_form_data_source">
+		<argument name="data" xsi:type="array">
+			<item name="js_config" xsi:type="array">
+				<item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+			</item>
+		</argument>
+		<settings>
+			<submitUrl path="*/*/save"/>
+		</settings>
+		<dataProvider name="offer_form_data_source" class="Mickael\Offers\Model\Data\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>offer_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<fieldset name="general">
+		<settings>
+			<label>General</label>
+		</settings>
+		<field name="label" formElement="textarea" sortOrder="10">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Offer</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">label</label>
+				<dataScope>label</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="image_path">
+		    <argument name="data" xsi:type="array">
+		        <item name="config" xsi:type="array">
+		            <item name="dataType" xsi:type="string">string</item>
+		            <item name="source" xsi:type="string">offer</item>
+		            <item name="label" xsi:type="string" translate="true">Image</item>
+		            <item name="visible" xsi:type="boolean">true</item>
+		            <item name="formElement" xsi:type="string">fileUploader</item>
+		            <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+		            <item name="previewTmpl" xsi:type="string">Mickael_Offers/image-preview</item>
+		            <item name="required" xsi:type="boolean">false</item>
+		            <item name="sortOrder" xsi:type="number">40</item>
+		            <item name="uploaderConfig" xsi:type="array">
+		                <item name="url" xsi:type="url" path="mickael_offers/index/uploader"/>
+		            </item>
+		        </item>
+		    </argument>
+		</field>
+		<field name="link" formElement="textarea" sortOrder="30">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Offer</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">link</label>
+				<dataScope>link</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="categories">
+        <argument name="data" xsi:type="array">
+            <item name="options" xsi:type="object">Magento\Catalog\Ui\Component\Product\Form\Categories\Options</item>
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Categories</item>
+                <item name="componentType" xsi:type="string">field</item>
+                <item name="formElement" xsi:type="string">multiselect</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="component" xsi:type="string">Magento_Catalog/js/components/new-category</item>
+                <item name="elementTmpl" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                <item name="filterOptions" xsi:type="boolean">true</item>
+                <item name="showCheckbox" xsi:type="boolean">true</item>
+                <item name="disableLabel" xsi:type="boolean">true</item>
+                <item name="multiple" xsi:type="boolean">true</item>
+                <item name="levelsVisibility" xsi:type="number">1</item>
+                <item name="required" xsi:type="boolean">false</item>
+                <item name="validation" xsi:type="array">
+                    <item name="required-entry" xsi:type="boolean">false</item>
+                </item>
+                <item name="listens" xsi:type="array">
+                    <item name="${ $.namespace }.${ $.namespace }:responseData" xsi:type="string">setParsed</item>
+                </item>
+            </item>
+        </argument>
+    </field>
+		<field name="start_date" formElement="date" sortOrder="30">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Offer</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>date</dataType>
+				<label translate="true">start_date</label>
+				<dataScope>start_date</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+		<field name="end_date" formElement="date" sortOrder="30">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">Offer</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>date</dataType>
+				<label translate="true">end_date</label>
+				<dataScope>end_date</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+	</fieldset>
+</form>

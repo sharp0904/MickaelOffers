@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Mickael::top_level" title="Mickael" module="Mickael_Offers" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Mickael_Offers::mickael_offers_offer" title="Manage offers" module="Mickael_Offers" sortOrder="9999" resource="Magento_Backend::content" parent="Mickael::top_level" action="mickael_offers/offer/index"/>
+	</menu>
+</config>

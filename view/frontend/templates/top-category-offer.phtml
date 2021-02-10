@@ -1,0 +1,26 @@
+<?php
+
+$offers = $block->getCurrentOffersByCategory();
+?>
+
+
+<div class="slick-mickaeloffers">
+  <?php foreach ($offers as $key => $offer): ?>
+    <div class="slick-mickaeloffers__item">
+      <div class="mickaeloffer">
+          <img src="<?= $offer->getImagePath(); ?>" alt="<?= $offer->getLabel() ?>" class="mickaeloffer__image">
+          <span class="mickaeloffer__label"><?= $offer->getLabel() ?></span>
+          <a href="<?= $offer->getLink() ?>" target="_blank" class="mickaeloffer__link"><?= $block->escapeHtml(__('See more')); ?></a>
+      </div>
+    </div>
+
+  <?php endforeach; ?>
+</div>
+
+<script type="text/x-magento-init">
+ {
+    ".slick-mickaeloffers": {
+        "Mickael_Offers/js/slick-offers": {}
+    }
+}
+</script>

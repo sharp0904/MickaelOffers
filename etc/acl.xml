@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Mickael_Offers::Offer" title="Offer" sortOrder="10">
+					<resource id="Mickael_Offers::Offer_save" title="Save Offer" sortOrder="10"/>
+					<resource id="Mickael_Offers::Offer_delete" title="Delete Offer" sortOrder="20"/>
+					<resource id="Mickael_Offers::Offer_update" title="Update Offer" sortOrder="30"/>
+					<resource id="Mickael_Offers::Offer_view" title="View Offer" sortOrder="40"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

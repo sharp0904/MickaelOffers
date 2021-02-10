@@ -1,0 +1,72 @@
+.slick-mickaeloffers * {
+    box-sizing: border-box;
+}
+
+.mickaeloffer {
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #111;
+  padding: 0 25px;
+}
+
+.mickaeloffer__image {
+  width: 250px;
+}
+
+.mickaeloffer__label {
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 20px
+}
+
+.mickaeloffer__link {
+  padding: 13px 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid #111;
+  color: #111;
+  min-width: 150px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.slick-mickaeloffers .slick-prev,
+.slick-mickaeloffers .slick-next {
+  background: rgba(20,20,20,.8) !important;
+  border-radius: 50%;
+  color: #111;
+}
+
+
+.slick-mickaeloffers .slick-next::before {
+    content: '';
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    height: 7px;
+    display: block;
+    width: 7px;
+    transform: rotate(135deg);
+    transform-origin: center;
+    position: relative;
+    top: 0px;
+    left: 4px;
+    padding: 0;
+}
+
+.slick-mickaeloffers .slick-prev::before {
+    content: '';
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    height: 7px;
+    display: block;
+    width: 7px;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    position: relative;
+    top: 0px;
+    right: -7px;
+    padding: 0;
+}
