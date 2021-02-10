@@ -2,32 +2,28 @@
 
 ## 1. composer Install
 
-TODO
-
+```
+composer require "mickael/offers:*"
+```
 
 ## 2.Enable module
 
-<pre>
+```
 php bin/magento module:enable Mickael_Offers
-</pre>
-
+```
 
 ## 3. Execute setups
 
-<pre>
+```
 php bin/magento setup:upgrade
 chmod 777 -R var/
-</pre>
-
-
 php bin/magento setup:di:compile
 php bin/magento ca:cl
+```
 
+## 4. Describe database to check structure
 
-
-## 4. Vérification de structure de bdd
-
-<pre>
+```
 mysql> describe mickael_offers;
 +------------+------------------+------+-----+-------------------+-----------------------------+
 | Field      | Type             | Null | Key | Default           | Extra                       |
@@ -43,4 +39,4 @@ mysql> describe mickael_offers;
 | updated_at | timestamp        | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
 +------------+------------------+------+-----+-------------------+-----------------------------+
 9 rows in set (0.00 sec)
-</pre>
+```
