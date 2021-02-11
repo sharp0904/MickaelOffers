@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Mickael\Offers\Controller\Adminhtml\Offer;
 
-class Delete extends \Mickael\Offers\Controller\Adminhtml\Offer
+class Delete extends \Magento\Backend\App\Action
 {
 
     /**

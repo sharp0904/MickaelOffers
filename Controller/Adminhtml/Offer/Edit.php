@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Mickael\Offers\Controller\Adminhtml\Offer;
 
-class Edit extends \Mickael\Offers\Controller\Adminhtml\Offer
+class Edit extends \Magento\Backend\App\Action
 {
 
     protected $resultPageFactory;
