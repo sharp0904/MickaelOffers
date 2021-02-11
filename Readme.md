@@ -3,7 +3,7 @@
 ## 1. composer Install
 
 ```
-composer require "mickael/offers:*"
+$ composer require "mickael/offers:1.0.0@dev"
 ```
 
 ## 2.Enable module
