@@ -6,11 +6,10 @@
 * @category  Mickael
 * @package   Mickael\Offers
 */
-declare(strict_types=1);
 
 namespace Mickael\Offers\Controller\Adminhtml\Offer;
 
-class NewAction extends \Magento\Backend\App\Action
+class NewAction extends \Mickael\Offers\Controller\Adminhtml\Offer
 {
 
     protected $resultForwardFactory;

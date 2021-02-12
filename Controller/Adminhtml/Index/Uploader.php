@@ -68,7 +68,7 @@ class Uploader extends \Magento\Backend\App\Action
             $imageName = $imageResult['name'];
             $firstName = substr($imageName, 0, 1);
             $secondName = substr($imageName, 1, 1);
-            $basePath = $this->filesystem->getDirectoryRead(DirectoryList::MEDIA)->getAbsolutePath();
+            $basePath = $this->filesystem->getDirectoryRead(DirectoryList::MEDIA)->getAbsolutePath() . 'mickael/image/';
             $mediaRootDir = $this->filesystem->getDirectoryRead(DirectoryList::MEDIA)->getAbsolutePath() . 'mickael/image/' . $firstName . '/' . $secondName . '/';
             if (!is_dir($mediaRootDir)) {
                 $this->fileIo->mkdir($mediaRootDir, 0775);

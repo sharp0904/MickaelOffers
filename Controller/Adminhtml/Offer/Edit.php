@@ -10,10 +10,11 @@ declare(strict_types=1);
 
 namespace Mickael\Offers\Controller\Adminhtml\Offer;
 
-class Edit extends \Magento\Backend\App\Action
+class Edit extends \Mickael\Offers\Controller\Adminhtml\Offer
 {
 
     protected $resultPageFactory;
+    protected $_coreRegistry;
 
     /**
      * @param \Magento\Backend\App\Action\Context $context
@@ -26,6 +27,7 @@ class Edit extends \Magento\Backend\App\Action
         \Magento\Framework\View\Result\PageFactory $resultPageFactory
     ) {
         $this->resultPageFactory = $resultPageFactory;
+        $this->_coreRegistry = $coreRegistry;
         parent::__construct($context, $coreRegistry);
     }
 

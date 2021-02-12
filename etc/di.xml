@@ -9,8 +9,8 @@
 	</virtualType>
 	<virtualType name="Uploader" type="Magento\Catalog\Model\ImageUploader">
 	   <arguments>
-	      <argument name="baseTmpPath" xsi:type="string">back/image</argument>
-	      <argument name="basePath" xsi:type="string">back/image</argument>
+	      <argument name="baseTmpPath" xsi:type="string">mickael/image</argument>
+	      <argument name="basePath" xsi:type="string">mickael/image</argument>
 	      <argument name="allowedExtensions" xsi:type="array">
 	         <item name="jpg" xsi:type="string">jpg</item>
 	         <item name="jpeg" xsi:type="string">jpeg</item>

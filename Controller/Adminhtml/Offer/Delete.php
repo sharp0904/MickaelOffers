@@ -10,8 +10,22 @@ declare(strict_types=1);
 
 namespace Mickael\Offers\Controller\Adminhtml\Offer;
 
-class Delete extends \Magento\Backend\App\Action
+class Delete extends \Mickael\Offers\Controller\Adminhtml\Offer
 {
+  protected $_coreRegistry;
+
+  /**
+   * @param \Magento\Backend\App\Action\Context $context
+   * @param \Magento\Framework\Registry $coreRegistry
+   */
+  public function __construct(
+      \Magento\Backend\App\Action\Context $context,
+      \Magento\Framework\Registry $coreRegistry,
+      \Magento\Framework\View\Result\PageFactory $resultPageFactory
+  ) {
+      $this->_coreRegistry = $coreRegistry;
+      parent::__construct($context, $coreRegistry);
+  }
 
     /**
      * Delete action

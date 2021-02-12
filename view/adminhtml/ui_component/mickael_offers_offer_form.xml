@@ -128,7 +128,7 @@
 				</validation>
 			</settings>
 		</field>
-		<field name="end_date" formElement="date" sortOrder="30">
+		<field name="end_date" formElement="date" sortOrder="31">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
 					<item name="source" xsi:type="string">Offer</item>
